@@ -1,0 +1,18 @@
+
+p {
+    word-break: break-all;
+}
+
+.vp-adaptive-theme,.tabs {
+    width: 100%;
+    border-radius: 4px;
+    margin: 0 auto!important;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.tabs {
+    border-radius: 5px 5px 0 0;
+}
