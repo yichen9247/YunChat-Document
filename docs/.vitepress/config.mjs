@@ -36,7 +36,7 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/yichen924/Handsock-Document/edit/main/docs/:path'
+      pattern: 'https://github.com/yichen9247/HandSock-Document/edit/main/docs/:path'
     }
   },
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]]
