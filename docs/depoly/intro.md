@@ -17,6 +17,6 @@ HandSock 是一款有趣的聊天应用，基于 Typescript，Mybatis-Plus，Spr
     <p></p>
 </div>
 
-![项目截图](./images/PixPin_2025-01-11_12-36-21.png)
+![项目截图](./images/PixPin_2025-01-22_14-33-19.png)
 
-![项目截图](./images/PixPin_2025-01-11_12-38-51.png)
+![项目截图](./images/PixPin_2025-01-22_14-33-43.png)
