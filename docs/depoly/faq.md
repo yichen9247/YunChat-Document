@@ -8,5 +8,6 @@
 
 这是系统默认分配的机器人账号，机器人账号可通过后台进行更改
 
+## 后端报错：Cannot assign requested address: bind
 
-
+后端配置文件其中IP地址绑定错误导致，请检查IP地址是否配置正确

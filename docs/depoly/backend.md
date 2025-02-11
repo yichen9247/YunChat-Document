@@ -9,25 +9,24 @@ server:
 
 handsock:
   port: 5120 # 通信端口
-  host: 192.168.0.1 # 通信主机
+  host: 192.168.0.101 # 通信主机
   name: HandSock # 应用名称
-  admin: admin@163.com # 管理员邮箱
-  origin: http://192.168.0.1:5173 # 跨域设置
-  reportMail: true # 是否发送举报邮件
+  origin: http://192.168.0.101:5173 # 跨域设置
   pingTimeout: 6000000 # PING超时
   pingInterval: 25000 # PING间隔
   upgradeTimeout: 1000000 # 更新超时
+
+ai:
+  url: https://api.ppinfra.com # AI接口
+  path: /v3/openai/chat/completions # AI接口路径
+  model: deepseek/deepseek-r1/community # AI模型
+  token: Your Tokens # AI Token https://ppinfra.com/user/register?invited_by=UUC4HY
 
 spring:
   data:
     redis:
       port: 6379 # Redis端口
       host: localhost # Redis主机
-  mail:
-    port: 25 # 邮件服务器端口
-    host: smtp.163.com # 邮件服务器地址
-    password: password # 邮箱密码
-    username: admin@163.com # 邮箱账号
 
   servlet:
     multipart:
@@ -39,5 +38,7 @@ spring:
     url: jdbc:mysql://localhost:3306/handsock?useSSL=false&serverTimezone=UTC # 数据库连接URL（handsock为数据库名，必须为handsock）
 ```
 :::
+
+申请DeepSeek大模型密钥：https://ppinfra.com/user/register?invited_by=UUC4HY
 
 其中 `192.168.0.1` 请替换为实际的IP地址或域名，数据库名称暂时只能使用 `handsock`，`origin` 这一项请跟前端的地址一致，否则将导致无法连接（很多人在这里踩了坑）。
