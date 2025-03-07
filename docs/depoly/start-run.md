@@ -4,7 +4,7 @@
 先把 `HandSock-Server` 打包成Jar包然后再以ROOT权限运行，或直接使用IDEA直接编译运行
 :::
 
-后端的打包路径 `target/Handsock2.0.1`，这里面的东西不要去动它，如果要上传至服务器运行，请将 `Handsock2.0.1` 文件夹打包成压缩包，通过运行压缩包里面的 `.jar` 文件来启动后端。
+后端的打包路径 `target/Handsock{version}`，这里面的东西不要去动它，如果要上传至服务器运行，请将 `Handsock{version}` 文件夹打包成压缩包，通过运行压缩包里面的 `.jar` 文件来启动后端。
 
 ![打包产物清单](./images/PixPin_2025-01-22_14-53-50.png)
 
