@@ -27,6 +27,8 @@ spring:
     redis:
       port: 6379 # Redis端口
       host: localhost # Redis主机
+      url: redis://localhost:6379 # Redis连接URL
+      password: yichen9247 # Redis密码（若有）
 
   servlet:
     multipart:
