@@ -20,6 +20,7 @@ export default defineConfig({
           { text: '快速上手', link: '/depoly/quick-start' },
           { text: '后端部署', link: '/depoly/backend' },
           { text: '前端部署', link: '/depoly/frontend' },
+          { text: '一键部署', link: '/depoly/docker-depoly' },
           { text: '安卓应用', link: '/depoly/android' },
           { text: '运行项目', link: '/depoly/start-run' },
           { text: '反向代理', link: '/depoly/reverse-proxy' },
