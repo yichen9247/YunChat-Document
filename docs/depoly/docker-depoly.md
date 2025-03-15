@@ -2,7 +2,7 @@
 
 使用一键部署，你需要准备一个Docker环境，Docker环境安装请参考[官方文档](https://docs.docker.com/get-docker/)，安装完成后，请在 `docker-compose.yml` 文件中修改以下配置：
 
-```yaml
+```yml
 services:
   vue-app:
     build:
@@ -46,7 +46,7 @@ services:
     depends_on:
       - mysql-db
       - redis-cache
-  # MySQL数据库
+      
   mysql-db:
     image: mysql:8.0
     ports:
