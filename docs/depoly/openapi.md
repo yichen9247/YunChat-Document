@@ -12,5 +12,5 @@
   - `gid`：频道编号
   - `content`：消息内容
 
-- 请求头：
+- 请求认证：
   - `Authorization`：`<openapi>`
