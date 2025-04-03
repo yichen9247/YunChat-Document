@@ -9,7 +9,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '简介', link: '/depoly/intro' },
-      { text: '演示站', link: 'https://handsock.xiaokolomi.cn/' },
+      { text: '演示站', link: 'https://im.yunair.cn' },
       { text: '软件下载', link: 'https://doc.handsock.xiaokolomi.cn/apk/app-release.apk' }
     ],
 
