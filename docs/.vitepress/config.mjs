@@ -26,7 +26,6 @@ export default defineConfig({
           { text: '反向代理', link: '/depoly/reverse-proxy' },
           { text: '开放接口', link: '/depoly/openapi' },
           { text: '付费搭建', link: '/depoly/pay-build' },
-          { text: '广告招租', link: '/depoly/ad-leasing' },
           { text: '常见问题', link: '/depoly/faq' }
         ]
       }
@@ -37,8 +36,8 @@ export default defineConfig({
     ],
     
     footer: {
-      message: '基于 <b>MIT</b> 许可发布',
-      copyright: '版权所有 © 2023 至今 <a href="https://github.com/yichen9247" target="_blank">Hua</a>'
+      message: '<p style="line-height: 32px;"><a href="https://beian.miit.gov.cn" target="_blank">蜀ICP备2025133319号-1</a></p>',
+      copyright: '<p>版权所有 © 2023 至今 <a href="https://github.com/yichen9247" target="_blank">Hua</a></p>'
     },
 
     editLink: {
