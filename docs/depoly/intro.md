@@ -1,6 +1,6 @@
 # 项目简介
 
-HandSock 是一款有趣的聊天应用，基于 Typescript，Mybatis-Plus，Springboot, Vue3 和 Socket.io，Redis 等技术开发。
+HandSock是一款有趣且开源的聊天应用，集聊天室和社区为一体，基于 Springboot、Vue3、TypeScript 等技术开发。
 
 <div style="display: flex; align-items: center;">
     <a href="https://github.com/yichen9247/HandSock/blob/main/LICENSE.txt">
