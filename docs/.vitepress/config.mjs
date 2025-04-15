@@ -24,6 +24,7 @@ export default defineConfig({
           { text: '安卓应用', link: '/depoly/android' },
           { text: '运行项目', link: '/depoly/start-run' },
           { text: '反向代理', link: '/depoly/reverse-proxy' },
+          { text: '更新迁移', link: '/depoly/migrate' },
           { text: '开放接口', link: '/depoly/openapi' },
           { text: '付费搭建', link: '/depoly/pay-build' },
           { text: '常见问题', link: '/depoly/faq' }
