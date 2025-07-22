@@ -11,9 +11,9 @@ export default defineConfig({
       { text: '简介', link: '/depoly/intro' },
       { text: '演示站', link: 'https://im.yunair.cn' },
       { text: '客户端下载', items: [{ 
-          text: 'Android', link: 'https://doc.handsock.xiaokolomi.cn/apk/app-release.apk' 
+          text: 'Android', link: 'https://doc.im.xiaokolomi.cn/apk/app-release.apk' 
       }, { 
-          text: 'Windows', link: 'https://doc.handsock.xiaokolomi.cn/msi/YunChat_2.3.2_x64_en-US.msi' 
+          text: 'Windows', link: 'https://doc.im.xiaokolomi.cn/msi/YunChat_2.3.2_x64_en-US.msi' 
       }]},
     ],
 
