@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: "HandSock文档",
   lastUpdated: true,
+  title: "YunChat文档",
   description: "一款有趣的聊天应用",
   themeConfig: {
     i18nRouting: true,
@@ -10,7 +10,11 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '简介', link: '/depoly/intro' },
       { text: '演示站', link: 'https://im.yunair.cn' },
-      { text: '软件下载', link: 'https://doc.handsock.xiaokolomi.cn/apk/app-release.apk' }
+      { text: '客户端下载', items: [{ 
+          text: 'Android', link: 'https://doc.handsock.xiaokolomi.cn/apk/app-release.apk' 
+      }, { 
+          text: 'Windows', link: 'https://doc.handsock.xiaokolomi.cn/msi/YunChat_2.3.2_x64_en-US.msi' 
+      }]},
     ],
 
     sidebar: [
@@ -21,7 +25,7 @@ export default defineConfig({
           { text: '后端部署', link: '/depoly/backend' },
           { text: '前端部署', link: '/depoly/frontend' },
           { text: '一键部署', link: '/depoly/docker-depoly' },
-          { text: '安卓应用', link: '/depoly/android' },
+          { text: '平台支持', link: '/depoly/platform' },
           { text: '运行项目', link: '/depoly/start-run' },
           { text: '反向代理', link: '/depoly/reverse-proxy' },
           { text: '更新迁移', link: '/depoly/migrate' },
@@ -33,16 +37,15 @@ export default defineConfig({
     ],
  
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yichen9247/HandSock' }
+      { icon: 'github', link: 'https://github.com/yichen9247/YunChat' }
     ],
     
     footer: {
       message: '<p style="line-height: 32px;"><a href="https://beian.miit.gov.cn" target="_blank">蜀ICP备2025133319号-1</a></p>',
-      copyright: '<p>版权所有 © 2023 至今 <a href="https://github.com/yichen9247" target="_blank">Hua</a></p>'
     },
 
     editLink: {
-      pattern: 'https://github.com/yichen9247/HandSock-Document/edit/main/docs/:path'
+      pattern: 'https://github.com/yichen9247/YunChat-Document/edit/main/docs/:path'
     }
   },
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]]

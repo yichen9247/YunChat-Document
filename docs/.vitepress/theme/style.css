@@ -16,3 +16,33 @@ p {
 .tabs {
     border-radius: 5px 5px 0 0;
 }
+
+table * {
+    white-space: nowrap;
+}
+
+img.image-src {
+    width: 150px;
+}
+
+div.VPHome {
+    margin-bottom: 20px!important;
+}
+
+@media (min-width: 960px) {
+    div.is-home {
+        padding-top: 80px!important;
+    }
+
+    div.is-home .image {
+        margin-top: 40px!important;
+    }
+
+    div.is-home .image .image-bg {
+        left: 75%;
+    }
+
+    div.is-home .image .image-src {
+        left: 75%;
+    }
+}

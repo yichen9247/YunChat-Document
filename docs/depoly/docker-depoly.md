@@ -9,9 +9,11 @@ services:
       context: .
       target: client-run  # 前端构建阶段
       args:
-        VITE_AUTO_SHOW_IMAGE: false # 是否自动展开图片
-        VITE_SERVER_IP: 192.168.0.101:5120 # 后端地址
-        VITE_SERVER_URL: http://192.168.0.101:8081 # 通信地址
+        VITE_SERVER_IP: localhost:5120 # 后端地址
+        VITE_APP_SCAN_LOGIN: false # 是否开启扫码登录方式
+        VITE_APP_AUTO_SHOWIMAGE: false # 是否自动展开图片
+        VITE_SERVER_URL: http://localhost:8081 # 通信地址
+        VITE_APP_SECRET_KEY: yichen9247-44052 # 服务保护密钥（配置为16位长度的字符串）
     ports:
       - "8080:80"
 
@@ -19,28 +21,35 @@ services:
     build:
       context: .
       target: server-run  # 后端构建阶段
-    hostname: HandSock-Linux
+    hostname: YunChat-Linux
     ports:
       - "8081:8081"
       - "5120:5120"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/handsock # 数据库连接URL
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/yunchat # 数据库连接URL
       SPRING_DATASOURCE_USERNAME: root # 数据库用户
-      SPRING_DATASOURCE_PASSWORD: handsock123 # 数据库密码
+      SPRING_DATASOURCE_PASSWORD: yunchat123 # 数据库密码
 
       SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: 5MB # 文件上传最大大小
       SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: 5MB # 网络请求最大大小
 
-      HANDSOCK_PORT: 5120 # 通信端口
-      HANDSOCK_HOST: 0.0.0.0 # 通信主机（这项不必改）
-      HANDSOCK_ORIGIN: http://192.168.0.101:8080 # 跨域设置
-      HANDSOCK_OPENAPI: ... # 开放接口密钥 https://doc.handsock.xiaokolomi.cn/depoly/openapi.html
+      YUNCHAT_PORT: 5120 # 通信端口
+      YUNCHAT_HOST: 0.0.0.0 # 通信主机（这项不必改）
+      YUNCHAT_ORIGIN: http://localhost:8080 # 跨域设置
+      YUNCHAT_OPENAPI: ... # 开放接口密钥 https://doc.YunChat.xiaokolomi.cn/depoly/openapi.html
+      
+      YUNCHAT_STORAGE_ALI_BUCKET: ... # 阿里云存储桶名称
+      YUNCHAT_STORAGE_ALI_ENDPOINT: ... # 阿里云存储桶区域
+      YUNCHAT_STORAGE_ALI_SECRETID: ... # 阿里云SecretId
+      YUNCHAT_STORAGE_ALI_SECRETKEY: ... # 阿里云SecretKey
 
-      HANDSOCK_AI_URL: https://api.ppinfra.com # AI接口
-      HANDSOCK_AI_PATH: /v3/openai/chat/completions # AI接口路径
-      HANDSOCK_AI_MODEL: deepseek/deepseek-r1/community # AI模型
-      HANDSOCK_AI_TOKEN: ... # AI Token https://ppinfra.com/user/register?invited_by=UUC4HY
-      HANDSOCK_SECRET_KEY: ... # 服务保护密钥（配置为16位长度的字符串）
+      YUNCHAT_STORAGE_TENCENT_REGION: ... # 腾讯云存储桶区域
+      YUNCHAT_STORAGE_TENCENT_BUCKET: ... # 腾讯云存储桶名称
+      YUNCHAT_STORAGE_TENCENT_SECRETID: ... # 腾讯云SecretId
+      YUNCHAT_STORAGE_TENCENT_SECRETKEY: ... # 腾讯云SecretKey
+
+      YUNCHAT_SECRET_KEY: ... # 服务保护密钥（配置为16位长度的字符串）
+      YUNCHAT_STORAGE_MOD: 0 # 存储模式 0:本地 1:腾讯云COS 2: 阿里云OSS
     depends_on:
       - mysql-db
       - redis-cache
@@ -50,8 +59,8 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: handsock
-      MYSQL_ROOT_PASSWORD: handsock123
+      MYSQL_DATABASE: yunchat
+      MYSQL_ROOT_PASSWORD: yunchat123
     volumes:
       - mysql-data:/var/lib/mysql
     healthcheck:
@@ -62,7 +71,7 @@ services:
 
   redis-cache:
     image: redis:6.2
-    command: redis-server --bind 0.0.0.0 --appendonly yes
+    command: redis-server --bind 0.0.0.0 --appendonly yes  # 添加 --bind 0.0.0.0
     ports:
       - "6379:6379"
     volumes:
@@ -73,10 +82,12 @@ volumes:
   redis-data:
 ```
 
-其中 `192.168.0.1` 请替换为实际的IP地址或域名，填写错误将导致无法连接（很多人在这里踩了坑）。
+其中 `localhost` 请替换为实际的IP地址或域名，`...` 请替换为实际的配置信息，若不配置，请替换为任意字符串，否则部署时将报错。
 
-如果你只是想单纯地一键部署后端，请将 `Dockerfile` 文件中的第 `10-12` 和 `34-39` 行注释掉，将 `docker-compose.yml` 文件中的第 `2-11` 行注释掉。
+如果你只是想单纯地一键部署后端，请将 `Dockerfile` 文件中的第 `10-26` 和 `38-43` 行注释掉，将 `docker-compose.yml` 文件中的第 `2-13` 行注释掉。
 
 完成配置后，在项目的根目录执行命令 `docker-compose up -d` 即可完成一键部署，期间会安装很多依赖，需要等待一段时间，预计5分钟左右。
+
+首次部署由于需要下载相关依赖，预计10分钟左右才可以部署完成，根据网络情况而定。
 
 完成部署后，访问 `http://IP:8080` 即可进入前端页面，端口号可在配置文件中修改，如果修改了端口号，前端页面的地址也需要相应地修改。
