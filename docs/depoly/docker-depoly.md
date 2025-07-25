@@ -36,7 +36,7 @@ services:
       YUNCHAT_PORT: 5120 # 通信端口
       YUNCHAT_HOST: 0.0.0.0 # 通信主机（这项不必改）
       YUNCHAT_ORIGIN: http://localhost:8080 # 跨域设置
-      YUNCHAT_OPENAPI: ... # 开放接口密钥 https://doc.YunChat.xiaokolomi.cn/depoly/openapi.html
+      YUNCHAT_OPENAPI: ... # 开放接口密钥 https://doc.im.xiaokolomi.cn/depoly/openapi.html
       
       YUNCHAT_STORAGE_ALI_BUCKET: ... # 阿里云存储桶名称
       YUNCHAT_STORAGE_ALI_ENDPOINT: ... # 阿里云存储桶区域
