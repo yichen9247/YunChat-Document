@@ -4,7 +4,7 @@
 
 ## 支持模型
 
-当前支持的模型有：[OpenAI](https://openai.com)&nbsp;&nbsp;&nbsp;[QwenAI](https://bailian.console.aliyun.com)&nbsp;&nbsp;&nbsp;[ZhiPuAI](https://bigmodel.cn)
+当前支持的模型有：[OpenAI](https://openai.com)&nbsp;&nbsp;&nbsp;[QwenAI](https://bailian.console.aliyun.com)&nbsp;&nbsp;&nbsp;[ZhiPuAI](https://bigmodel.cn)&nbsp;&nbsp;&nbsp;[GeminiAI](https://ai.google.dev/gemini-api/docs)
 
 其中OpenAI支持使用基础地址参数，因此大部分模型兼容OpenAI接口，暂不支持深度思考大模型，您可以根据自己的需求选择合适的模型进行接入，例如：[DeepSeek](https://platform.deepseek.com)
 
